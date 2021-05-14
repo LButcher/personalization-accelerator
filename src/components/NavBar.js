@@ -1,10 +1,5 @@
 import {
-    Toolbar,
-    AppBar,
-    Typography,
-    Button,
-    Tabs,
-    Tab,
+    Typography
   } from "@material-ui/core";
   
   import { Link } from "react-router-dom";
@@ -22,7 +17,7 @@ import {
     handleClick(e) {
       //document.querySelector('#'+e.target.id).style.color= 'red'
       document.querySelectorAll(".navLink").forEach(function (element) {
-        if (element.id == e.target.id) {
+        if (element.id === e.target.id) {
           element.classList.add("selectedNav");
         } else {
           element.classList.remove("selectedNav");
@@ -36,7 +31,7 @@ import {
           <div>
             <img className="logo" src={logo}></img>
           </div>
-          <Typography variant="h7" className="nav-title-container">
+          <Typography className="nav-title-container">
             <Link
               id="HomeLink"
               to={"/"}
@@ -46,12 +41,12 @@ import {
               Home
             </Link>
             <Link
-              id="AudienceLink"
-              to={"/Audiences"}
+              id="GoalsLink"
+              to={"/Goals"}
               className="navLink"
               onClick={this.handleClick}
             >
-              Audiences
+              Goals
             </Link>
             <Link
               id="InsightsLink"
@@ -60,6 +55,14 @@ import {
               onClick={this.handleClick}
             >
               Insights
+            </Link>
+            <Link
+              id="AudienceLink"
+              to={"/Audiences"}
+              className="navLink"
+              onClick={this.handleClick}
+            >
+              Audiences
             </Link>
             <Link
               id="JourneysLink"
@@ -76,22 +79,6 @@ import {
               onClick={this.handleClick}
             >
               Tests
-            </Link>
-            <Link
-              id="GoalsLink"
-              to={"/Goals"}
-              className="navLink"
-              onClick={this.handleClick}
-            >
-              Goals
-            </Link>
-            <Link
-              id="IdeasLink"
-              to={"/Ideas"}
-              className="navLink"
-              onClick={this.handleClick}
-            >
-              Ideas
             </Link>
           </Typography>
         </div>

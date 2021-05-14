@@ -47,16 +47,85 @@ body{
 
 .home-top-container {
   display: flex;
-  width: 100%;
   padding: 16px;
 }
 
 .home-title-container {
   color: #31373E;
+  width: 100%;
 }
 
 .home-seperator {
   margin-left: 16px;
   margin-right: 16px;
   border-top: 1px solid #DCE1E9
+}
+
+.home-settings-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.home-performance-dropdown {
+  margin-left: 8px;
+  margin-right: 8px;
+  background-color: white;
+}
+
+.dashboard-container {
+  width: 100%;
+  display:flex;
+  justify-content: flex-start;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.test-summary-preview {
+  flex-basis: 40%;
+  display: flex;
+}
+
+.test-summary {
+  flex-basis: 30%;
+}
+
+.test-summary-chart-container { 
+  flex-basis: 70%;
+  margin-right: 32px;
+}
+
+.test-summary-chart-details {
+  transform: translate(150%,350%);
+  height: 15%;
+  width: 116px;
+}
+.test-summary-chart {
+  height: 65%;
+}
+
+.dashboard-chart {
+  flex-basis: 60%;
+}
+
+.home-chart-title{
+  color: #31373E;
+  padding-top: 8px;
+}
+
+.home-test-title {
+  color: #31373E;
+  padding-left: 16px;
+  padding-top: 8px;
+}
+.home-test-sub {
+  color: #31373E;
+  padding-left: 16px;
+  padding-bottom: 8px;
+}
+
+.home-goals-title {
+  color: #31373E;
+  padding-left: 16px;
+  padding-top: 32px;
 }
