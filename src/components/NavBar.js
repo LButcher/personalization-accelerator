@@ -1,10 +1,5 @@
 import {
-    Toolbar,
-    AppBar,
-    Typography,
-    Button,
-    Tabs,
-    Tab,
+    Typography
   } from "@material-ui/core";
   
   import { Link } from "react-router-dom";
@@ -22,7 +17,7 @@ import {
     handleClick(e) {
       //document.querySelector('#'+e.target.id).style.color= 'red'
       document.querySelectorAll(".navLink").forEach(function (element) {
-        if (element.id == e.target.id) {
+        if (element.id === e.target.id) {
           element.classList.add("selectedNav");
         } else {
           element.classList.remove("selectedNav");
@@ -36,7 +31,7 @@ import {
           <div>
             <img className="logo" src={logo}></img>
           </div>
-          <Typography variant="h7" className="nav-title-container">
+          <Typography className="nav-title-container">
             <Link
               id="HomeLink"
               to={"/"}
