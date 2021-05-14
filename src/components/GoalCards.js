@@ -13,9 +13,9 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function GoalCards(goalData) {
+export default function GoalCards(parentUtil) {
 
-    var data=goalData.data
+    var data=parentUtil.data
   const classes = useStyles();
 
   return (
@@ -29,7 +29,7 @@ export default function GoalCards(goalData) {
         >
           {data.map((elem) => (
             <Grid item xs={6} key={elem.id}>
-              <Card overflow="hidden" className="goal-card">
+              <Card overflow="hidden" className="goal-card" onClick={()=>parentUtil.handleClickOpen(elem.id)}>
                 <CardHeader
                   title={elem.title}
                   subheader={elem.date}

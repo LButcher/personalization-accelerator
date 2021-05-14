@@ -85,7 +85,7 @@ import {
             justify="center"
             alignItems="center"
             className="goals-cards-container">
-                <GoalCards data={this.state.data}></GoalCards>
+                <GoalCards data={this.state.data} handleClickOpen={this.handleClickOpen}></GoalCards>
             </Grid>
         </Grid>
       );
