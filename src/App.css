@@ -47,7 +47,6 @@ body{
 
 .home-top-container {
   display: flex;
-  width: 100%;
   padding: 16px;
 }
 
@@ -59,4 +58,16 @@ body{
   margin-left: 16px;
   margin-right: 16px;
   border-top: 1px solid #DCE1E9
+}
+
+.home-settings-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.home-performance-dropdown {
+  margin-left: 8px;
+  margin-right: 8px;
+  background-color: white;
 }

@@ -1,26 +1,38 @@
 import React, { Component } from "react";
 import {
     Typography,
-    InputLabel,
-    FormControl,
-    MenuItem,
-    Select
+    TextField
   } from "@material-ui/core";
+  import Autocomplete from '@material-ui/lab/Autocomplete';
+
   
 
 class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        journey: null
+        journey: null,
+        audience: null
     }
 
-    this.handleChange = this.handleChange.bind(this);
+    this.handleJourneyChange = this.handleJourneyChange.bind(this);
+    this.handleAudienceChange = this.handleAudienceChange.bind(this);
   }
 
-  handleChange(){
-    console.log("hi")
+  handleJourneyChange(e,v){
+    this.setState({journey:v})
   }
+
+  handleAudienceChange(e,v){
+    this.setState({audience:v})
+  }
+
+  journeys = ['All','Form Submit']
+  audiences = ['All', 'Unknown', 'Decision Makers']
+  teams = ['All']
+  channels = ['All']
+  brands = ['All']
+  time = ['Past Year']
 
   render() {
     return (
@@ -31,18 +43,62 @@ class Home extends Component {
                 </Typography>
 
                 <div className="home-settings-container">
-                    <FormControl>
-                    <InputLabel id="Journey-selector">Journey</InputLabel>
-                        <Select
-                        labelId="journey-select-label"
-                        id="journey-select"
-                        value={this.state.journey}
-                        onChange={this.handleChange}
-                        >
-                            <MenuItem value={'All'}>All</MenuItem>
-                            <MenuItem value={'Test'}>Test</MenuItem>
-                        </Select>
-                    </FormControl>
+                <Autocomplete
+                        className="home-performance-dropdown"
+                        id="teams"
+                        options={this.teams}
+                        getOptionLabel={(journey) => journey}
+                        style={{ width: 200 }}
+                        defaultValue= {"All"}
+                        renderInput={(params) => <TextField {...params} label="Team" variant="outlined" className=""/>}
+                        />
+                        <Autocomplete
+                        className="home-performance-dropdown"
+                        id="brands"
+                        options={this.brands}
+                        getOptionLabel={(brand) => brand}
+                        style={{ width: 200 }}
+                        defaultValue= {"All"}
+                        renderInput={(params) => <TextField {...params} label="Brand" variant="outlined" className=""/>}
+                        />
+                        <Autocomplete
+                        className="home-performance-dropdown"
+                        id="channels"
+                        options={this.channels}
+                        getOptionLabel={(channel) => channel}
+                        style={{ width: 200 }}
+                        defaultValue= {"All"}
+                        renderInput={(params) => <TextField {...params} label="Channel" variant="outlined" className=""/>}
+                        />
+                    <Autocomplete
+                        className="home-performance-dropdown"
+                        id="journeys"
+                        onChange={this.handleJourneyChange}
+                        options={this.journeys}
+                        getOptionLabel={(journey) => journey}
+                        style={{ width: 200 }}
+                        defaultValue= {"All"}
+                        renderInput={(params) => <TextField {...params} label="Journey" variant="outlined" className=""/>}
+                        />
+                        <Autocomplete
+                        className="home-performance-dropdown"
+                        id="audiences"
+                        onChange={this.handleAudienceChange}
+                        options={this.audiences}
+                        getOptionLabel={(audience) => audience}
+                        style={{ width: 200 }}
+                        defaultValue= {"All"}
+                        renderInput={(params) => <TextField {...params} label="Audience" variant="outlined"/>}
+                        />
+                        <Autocomplete
+                        className="home-performance-dropdown"
+                        id="date-range"
+                        options={this.time}
+                        getOptionLabel={(time) => time}
+                        style={{ width: 200 }}
+                        defaultValue= {"Past Year"}
+                        renderInput={(params) => <TextField {...params} label="Date Range" variant="outlined"/>}
+                        />
                 </div>
             </section>
             <hr className="home-seperator"></hr>

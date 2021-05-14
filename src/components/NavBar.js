@@ -46,12 +46,12 @@ import {
               Home
             </Link>
             <Link
-              id="AudienceLink"
-              to={"/Audiences"}
+              id="GoalsLink"
+              to={"/Goals"}
               className="navLink"
               onClick={this.handleClick}
             >
-              Audiences
+              Goals
             </Link>
             <Link
               id="InsightsLink"
@@ -60,6 +60,14 @@ import {
               onClick={this.handleClick}
             >
               Insights
+            </Link>
+            <Link
+              id="AudienceLink"
+              to={"/Audiences"}
+              className="navLink"
+              onClick={this.handleClick}
+            >
+              Audiences
             </Link>
             <Link
               id="JourneysLink"
@@ -76,14 +84,6 @@ import {
               onClick={this.handleClick}
             >
               Tests
-            </Link>
-            <Link
-              id="GoalsLink"
-              to={"/Goals"}
-              className="navLink"
-              onClick={this.handleClick}
-            >
-              Goals
             </Link>
           </Typography>
         </div>
