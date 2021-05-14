@@ -129,3 +129,20 @@ body{
   padding-left: 16px;
   padding-top: 32px;
 }
+
+.goals-container {
+  padding: 16px;
+}
+
+.goals-cards-container {
+  padding: 24px;
+}
+
+.goals-actions {
+  padding-right: 16px;
+}
+
+.goal-card {
+  height: 200px;
+  overflow: hidden;
+}

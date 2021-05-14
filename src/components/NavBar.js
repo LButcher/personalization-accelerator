@@ -5,15 +5,23 @@ import {
   import { Link } from "react-router-dom";
   import React, { Component } from "react";
   import logo from "../bounteousLogo.svg";
-  
+
+
+
   class NavBar extends Component {
     constructor(props) {
       super(props);
   
       // This binding is necessary to make `this` work in the callback
       this.handleClick = this.handleClick.bind(this);
+      
     }
   
+    isThisRoute(name){
+        var route = window.location.pathname.substring(1,)
+        return route==name;
+    }
+
     handleClick(e) {
       //document.querySelector('#'+e.target.id).style.color= 'red'
       document.querySelectorAll(".navLink").forEach(function (element) {
@@ -29,13 +37,13 @@ import {
       return (
         <div className="navContainer">
           <div>
-            <img className="logo" src={logo}></img>
+            <img className="logo" alt="bounteous logo" src={logo}></img>
           </div>
           <Typography className="nav-title-container">
             <Link
               id="HomeLink"
               to={"/"}
-              className="navLink selectedNav"
+              className={this.isThisRoute('') ? "navLink selectedNav" : "navLink"}
               onClick={this.handleClick}
             >
               Home
@@ -43,7 +51,7 @@ import {
             <Link
               id="GoalsLink"
               to={"/Goals"}
-              className="navLink"
+              className={this.isThisRoute('Goals') ? "navLink selectedNav" : "navLink"}
               onClick={this.handleClick}
             >
               Goals
@@ -51,15 +59,15 @@ import {
             <Link
               id="InsightsLink"
               to={"/Insights"}
-              className="navLink"
+              className={this.isThisRoute('Insights') ? "navLink selectedNav" : "navLink"}
               onClick={this.handleClick}
             >
               Insights
             </Link>
             <Link
-              id="AudienceLink"
+              id="AudiencesLink"
               to={"/Audiences"}
-              className="navLink"
+              className={this.isThisRoute('Audiences') ? "navLink selectedNav" : "navLink"}
               onClick={this.handleClick}
             >
               Audiences
@@ -67,7 +75,7 @@ import {
             <Link
               id="JourneysLink"
               to={"/Journeys"}
-              className="navLink"
+              className={this.isThisRoute('Journeys') ? "navLink selectedNav" : "navLink"}
               onClick={this.handleClick}
             >
               Journeys

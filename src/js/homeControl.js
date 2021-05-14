@@ -30,7 +30,7 @@ export function getChart(name){
           {
             data: chartData,
             backgroundColor: [
-                '#0229a5'
+                '#3504bc'
             ]
           },
         ],

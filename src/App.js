@@ -1,5 +1,4 @@
-import React,{ Component } from 'react';
-import logo from './bounteousLogo.svg';
+
 import './App.css';
 import {
   Switch,
@@ -8,15 +7,19 @@ import {
 } from "react-router-dom";
 import NavBar from "./components/NavBar.js";
 import Home from "./components/Home.js";
-
+import Goals from './components/Goals.js'
 
 function App() {
+
   return (
     <BrowserRouter>
       <NavBar></NavBar>
       <Switch>
         <Route exact path="/">
             <Home></Home>
+        </Route>
+        <Route exact path="/Goals">
+            <Goals></Goals>
         </Route>
       </Switch>
     </BrowserRouter>
