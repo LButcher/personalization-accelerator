@@ -85,14 +85,6 @@ import {
             >
               Goals
             </Link>
-            <Link
-              id="IdeasLink"
-              to={"/Ideas"}
-              className="navLink"
-              onClick={this.handleClick}
-            >
-              Ideas
-            </Link>
           </Typography>
         </div>
       );
